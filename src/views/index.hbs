@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="title">
+            <p id="weather-title">Weather</p>
+        </div>
+        <div class="creator">
+            <p>Created by {{name}}</p>
+        </div>
+        <div class="error">
+            <p>{{error}}</p>
+        </div>
+        <form class="form">
+            <input type="text" id="item" placeholder="Location">
+            <button type="submit" id="submitButton">Submit</button>
+        </form>
+        <div class="data">
+            <p>{{location}}</p>
+            <p>{{data}}</p>
+        </div>        
+        <script>
+                const weatherForm = document.querySelector('form')
+                const search = document.querySelector('input')
+                weatherForm.addEventListener('submit', (e) => {
+                    e.preventDefault()
+                    const location = search.value
+                    window.location.assign('http://localhost:8080?location='+location)
+                })
+        </script>
+    </body>
+    
+</html>
