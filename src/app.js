@@ -15,7 +15,6 @@ app.get('', (req, res) => {
             name: 'Shivam'
         })
     }
-    
     geocode(req.query.location, (error, {lat, long, location} = {}) => {
         if(error){
             return res.render('index', {
